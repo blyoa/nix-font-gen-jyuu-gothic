@@ -37,6 +37,7 @@ This is a Nix flake for the [Gen Jyuu Gothic（源柔ゴシック）](http://jik
           {
             home.package = [
               gen-jyuu-gothic.packages.${system}.default
+              gen-jyuu-gothic.packages.${system}.gen-jyuu-gothic-x
             ];
           }
         ];
