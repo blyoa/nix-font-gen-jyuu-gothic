@@ -30,6 +30,18 @@
         "url": "https://ftp.iij.ad.jp/pub/osdn.jp/users/8/8636/genjyuugothic-20150607.7z"
       }
     },
+    "gen-jyuu-gothic-l": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-W/6Je/JKw+sCk15zdskEz2HMZ3WTKtC0MMphabcMbe4=",
+        "type": "file",
+        "url": "https://ftp.iij.ad.jp/pub/osdn.jp/users/8/8635/genjyuugothic-l-20150607.7z"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://ftp.iij.ad.jp/pub/osdn.jp/users/8/8635/genjyuugothic-l-20150607.7z"
+      }
+    },
     "gen-jyuu-gothic-x": {
       "flake": false,
       "locked": {
@@ -62,6 +74,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "gen-jyuu-gothic": "gen-jyuu-gothic",
+        "gen-jyuu-gothic-l": "gen-jyuu-gothic-l",
         "gen-jyuu-gothic-x": "gen-jyuu-gothic-x",
         "nixpkgs": "nixpkgs"
       }

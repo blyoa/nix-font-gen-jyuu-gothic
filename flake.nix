@@ -11,6 +11,10 @@
       url = "https://ftp.iij.ad.jp/pub/osdn.jp/users/8/8638/genjyuugothic-x-20150607.7z";
       flake = false;
     };
+    gen-jyuu-gothic-l = {
+      url = "https://ftp.iij.ad.jp/pub/osdn.jp/users/8/8635/genjyuugothic-l-20150607.7z";
+      flake = false;
+    };
   };
 
   outputs =
@@ -20,6 +24,7 @@
       flake-utils,
       gen-jyuu-gothic,
       gen-jyuu-gothic-x,
+      gen-jyuu-gothic-l,
     }:
     flake-utils.lib.eachDefaultSystem (
       system:
@@ -73,6 +78,31 @@
               runHook preInstall
 
               install -m644 -D --target $out/share/fonts/truetype/gen-jyuu-gothic-x gen-jyuu-gothic-x/GenJyuuGothicX-*.ttf
+
+              runHook postInstall
+            '';
+          };
+
+          gen-jyuu-gothic-l = pkgs.stdenvNoCC.mkDerivation {
+            pname = "gen-jyuu-gothic-l";
+            version = "1.002.20150531";
+
+            src = gen-jyuu-gothic-l;
+
+            nativeBuildInputs = [ pkgs.p7zip ];
+
+            unpackPhase = ''
+              runHook preUnpack
+
+              7z x $src -ogen-jyuu-gothic-l
+
+              runHook postUnpack
+            '';
+
+            installPhase = ''
+              runHook preInstall
+
+              install -m644 -D --target $out/share/fonts/truetype/gen-jyuu-gothic-l gen-jyuu-gothic-l/GenJyuuGothicL-*.ttf
 
               runHook postInstall
             '';
